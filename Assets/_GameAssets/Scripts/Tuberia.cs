@@ -5,10 +5,14 @@ using UnityEngine;
 public class Tuberia : MonoBehaviour {
 
     [SerializeField]float speed = 3;
-    [SerializeField] AudioSource explosion;
+    //private Deja_Bird bird;
+    private float botLimit = -2.8f;
+    private float topLimit = 2.2f;
+    
 
-	void Start () {
-        float factorPosition = Random.Range(-2, 1);
+    void Start () {
+        //audioSource = GetComponent<AudioSource>();
+        float factorPosition = Random.Range(botLimit, topLimit);
         this.transform.position = new Vector3(
             transform.position.x,
             transform.position.y + factorPosition,
@@ -26,5 +30,10 @@ public class Tuberia : MonoBehaviour {
         {
            DestroyImmediate(this.gameObject);
         }
+        if(Deja_Bird.ShowPoints() == 2)
+        {
+            speed = speed + 0.002f;
+        }
+        
     }
 }
