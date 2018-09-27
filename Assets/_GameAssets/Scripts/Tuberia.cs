@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tuberia : MonoBehaviour {
 
     [SerializeField]float speed = 3;
+    [SerializeField] AudioSource explosion;
 
 	void Start () {
         float factorPosition = Random.Range(-2, 1);

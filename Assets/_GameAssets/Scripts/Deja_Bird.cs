@@ -25,9 +25,10 @@ public class Deja_Bird : MonoBehaviour {
             rb.AddTorque(Vector3.forward * power);
             
         }
-        if (this.transform.rotation.x <= -55f)
+        if (this.transform.rotation.x <= -45f)
         {
-            transform.rotation = Quaternion.Euler(30, 0, 0);
+            //transform.rotation = Quaternion.Euler(-30, 0, 0);
+            rb.freezeRotation = true;
         }
     }
 
